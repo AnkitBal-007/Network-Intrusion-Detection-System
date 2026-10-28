@@ -68,25 +68,18 @@ def main() -> None:
         # 1. File Uploader
         uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
 
-        # 2. Sample CSV download options for immediate testing
-        sample_options = [
-            "sample_input.csv",
-            "sample_benign_only.csv",
-            "sample_heavy_attacks.csv",
-            "sample_dos_recon_flood.csv",
-            "sample_stealth_threats.csv",
-        ]
-        sample_choice = st.selectbox("Choose sample scenario", options=sample_options)
-        sample_path = config.SAMPLE_DATA_DIR / sample_choice
-        if sample_path.exists():
-            with open(sample_path, "rb") as f_sample:
+        # 2. Sample CSV download button for immediate trial
+        if config.SAMPLE_INPUT_PATH.exists():
+            with open(config.SAMPLE_INPUT_PATH, "rb") as f_sample:
                 sample_bytes = f_sample.read()
             st.download_button(
-                label=f"Download {sample_choice}",
+                label="Download sample CSV",
                 data=sample_bytes,
-                file_name=sample_choice,
+                file_name="sample_input.csv",
                 mime="text/csv",
+                help="Download sample network traffic records to test the detection system.",
             )
+
 
 
         # File validation state

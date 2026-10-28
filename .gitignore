@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and checkpoints
+.pytest_cache/
+.ipynb_checkpoints/
+*.cache
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Trained models and large artifacts
+models/*.pkl
+!models/.gitkeep
+
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

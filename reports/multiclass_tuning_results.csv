@@ -1,0 +1,4 @@
+model,best_cv_macro_f1,best_params
+XGBoost (Tuned),0.6018,"{'subsample': 1.0, 'n_estimators': 150, 'max_depth': 6, 'learning_rate': 0.08, 'colsample_bytree': 1.0}"
+Random Forest (Tuned),0.5987,"{'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 20}"
+Decision Tree (Tuned),0.5806,"{'min_samples_split': 5, 'min_samples_leaf': 1, 'max_depth': 16, 'criterion': 'entropy'}"
